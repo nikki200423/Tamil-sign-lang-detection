@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tamil Sign Language Detection</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>தமிழ் சைகை மொழி கண்டறிதல்</h1>
+            <h2>Tamil Sign Language Detection</h2>
+        </header>
+        
+        <div class="main-content">
+            <div class="video-container">
+                <video id="video" autoplay muted></video>
+                <canvas id="canvas"></canvas>
+                <div id="detectedSignOverlay" class="sign-overlay"></div>
+                <div class="controls">
+                    <button id="startBtn">Start Camera</button>
+                    <button id="captureBtn" disabled>Capture Sign</button>
+                    <button id="detectBtn" disabled>Detect Sign</button>
+                    <button id="realTimeBtn" disabled>Toggle Real-time Detection</button>
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <div class="result-box">
+                    <h3>Detected Sign:</h3>
+                    <div id="detectedSign" class="sign-result">-</div>
+                    <div id="confidence" class="confidence-result">Confidence: -</div>
+                    <div id="debugImage" class="debug-image"></div>
+                </div>
+                
+                <div class="translation-box">
+                    <h3>Translation & Speech</h3>
+                    <div class="sentence-builder">
+                        <div id="currentSentence" class="current-sentence"></div>
+                        <div class="builder-controls">
+                            <button id="addToSentenceBtn" disabled>Add to Sentence</button>
+                            <button id="speakBtn" disabled>Speak</button>
+                            <button id="clearBtn">Clear</button>
+                        </div>
+                    </div>
+                    <div class="translation">
+                        <h4>English Translation:</h4>
+                        <div id="englishTranslation" class="translation-result">-</div>
+                    </div>
+                </div>
+                
+                <div class="dictionary">
+                    <h3>Tamil Sign Language Dictionary</h3>
+                    <div class="dictionary-content" id="dictionaryContent">
+                        <!-- Dictionary entries will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>About Tamil Sign Language</h3>
+            <p>Tamil Sign Language (TSL) is a visual-gestural language used by the Deaf community in Tamil Nadu and other Tamil-speaking regions. It has its own grammar and syntax distinct from spoken Tamil.</p>
+            <div class="instructions">
+                <h3>How to Use:</h3>
+                <ol>
+                    <li>Click "Start Camera" to activate your webcam</li>
+                    <li>Position your hand in the frame making a Tamil sign</li>
+                    <li>For manual detection: Click "Capture Sign" then "Detect Sign"</li>
+                    <li>For real-time detection: Click "Toggle Real-time Detection"</li>
+                    <li>Add detected signs to build sentences</li>
+                    <li>Use "Speak" to hear the translation</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Tamil Sign Language Detection Application &copy; 2025</p>
+    </footer>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
